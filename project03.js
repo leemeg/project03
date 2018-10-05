@@ -11,16 +11,16 @@ const PROMPT = require('readline-sync');
 
 let wrongNum = 0; // presets incorrect response attempts to max number of tries
 let numVotes = 0; //resets votes for new run
-let rerun, stars, result;
-let movieTitle = "Howard Bates is awesome"
+let rerun = 1, stars, result;
+let movieTitle = "Howard Bates is awesome";
 let arrayStars = [];
 
 function main() {
-    setReRun();
+    //setReRun();
     while (rerun === 1) {
         setStars();
         populateArrayStars();
-        setReRun();
+        //setReRun();
     }
     setResults();
 }
@@ -42,7 +42,10 @@ function setStars() {
     const NUMTRY = 3;
     console.log(`\nWith 0 stars being worst and 5 stars equaling the best, how would you rate the movie "${movieTitle}" ?`);
     stars = Number(PROMPT.question(`Please enter a number from 0 to 5 representing how many stars you would give this movie: `));
-    if (stars < 0 || stars > 5) {
+    if (stars === 99){
+        rerun = 0;
+    }
+    else if (stars < 0 || stars > 5) {
         wrongNum++;
         if (wrongNum < (NUMTRY - 1)) {
             console.log(`\nIncorrect rating, please try again.`);
@@ -54,16 +57,19 @@ function setStars() {
         }
         if (wrongNum === NUMTRY) {
             console.log(`\nSorry that rating is not allowed, Thank you for your participation.`);
-            rerun = 0;
+            stars = null;
         }
     }
     wrongNum = 0;
 }
 
 function populateArrayStars() {
-    arrayStars.push(stars);
-    Array.prototype.values();
-    numVotes++;
+    if (stars === 99) {
+
+    }
+    else if (arrayStars.push(stars)) {
+        numVotes++;
+    }
 }
 
 function setResults() {
