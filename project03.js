@@ -8,7 +8,6 @@
 "use strict";
 const PROMPT = require('readline-sync');
 
-
 let wrongNum = 0; // presets incorrect response attempts to max number of tries
 let numVotes = 0; //resets votes for new run
 let stars, result;
