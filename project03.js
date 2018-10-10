@@ -29,7 +29,7 @@ function setStars() {
     const NUMTRY = 3;
     const END = 99;
     console.log(`\nWith 0 stars being worst and 5 stars equaling the best, how would you rate the movie "${movieTitle}" ?`);
-    console.log(`                          If you no longer wish to participate, enter 99.`);
+    console.log(`                                     If you no longer wish to participate, enter 99.`);
     stars = Number(PROMPT.question(`Please enter a number from 0 to 5 representing how many stars you would give this movie: `));
 
     if ((stars >= 0 && stars <= 5) && stars !== END) {
