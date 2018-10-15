@@ -39,7 +39,7 @@ function setStars() {
         numVotes++;
         console.log('\x1Bc');
         console.log(`\nThank you for your vote of ` + stars + ` stars.`);
-        console.log(`\nNext user Press enter to continue. `);
+        console.log(`\nNext user press enter to continue. `);
         PROMPT.question(``);
         console.log('\x1Bc');
     }
@@ -59,7 +59,7 @@ function setStars() {
             console.log('\x1Bc');
             console.log(`\nSorry that rating is not allowed, Thank you for your participation.`);
             stars = null;
-            PROMPT.question(`Press enter to continue. `);
+            PROMPT.question(`\nNext user press enter to continue. `);
         }
     }
 }
